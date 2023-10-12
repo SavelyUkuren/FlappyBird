@@ -20,6 +20,8 @@
 		455402002AD7DA6600C10CB4 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455401DA2AD7DA6400C10CB4 /* GameScene.swift */; };
 		455402012AD7DA6600C10CB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 455401DB2AD7DA6600C10CB4 /* Assets.xcassets */; };
 		455402022AD7DA6600C10CB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 455401DB2AD7DA6600C10CB4 /* Assets.xcassets */; };
+		4554020D2AD7E4B700C10CB4 /* Bird.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4554020C2AD7E4B700C10CB4 /* Bird.swift */; };
+		4554020E2AD7E4B700C10CB4 /* Bird.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4554020C2AD7E4B700C10CB4 /* Bird.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,7 @@
 		455401F52AD7DA6600C10CB4 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		455401F82AD7DA6600C10CB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		455401FA2AD7DA6600C10CB4 /* FlappyBird_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FlappyBird_macOS.entitlements; sourceTree = "<group>"; };
+		4554020C2AD7E4B700C10CB4 /* Bird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bird.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +72,7 @@
 		455401D72AD7DA6400C10CB4 /* FlappyBird Shared */ = {
 			isa = PBXGroup;
 			children = (
+				4554020B2AD7E49500C10CB4 /* Bird */,
 				455401D92AD7DA6400C10CB4 /* GameScene.sks */,
 				455401DA2AD7DA6400C10CB4 /* GameScene.swift */,
 				455401DB2AD7DA6600C10CB4 /* Assets.xcassets */,
@@ -105,6 +109,14 @@
 				455401FA2AD7DA6600C10CB4 /* FlappyBird_macOS.entitlements */,
 			);
 			path = "FlappyBird macOS";
+			sourceTree = "<group>";
+		};
+		4554020B2AD7E49500C10CB4 /* Bird */ = {
+			isa = PBXGroup;
+			children = (
+				4554020C2AD7E4B700C10CB4 /* Bird.swift */,
+			);
+			path = Bird;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +224,7 @@
 			files = (
 				455401FF2AD7DA6600C10CB4 /* GameScene.swift in Sources */,
 				455401E62AD7DA6600C10CB4 /* GameViewController.swift in Sources */,
+				4554020D2AD7E4B700C10CB4 /* Bird.swift in Sources */,
 				455401E42AD7DA6600C10CB4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -222,6 +235,7 @@
 			files = (
 				455402002AD7DA6600C10CB4 /* GameScene.swift in Sources */,
 				455401F62AD7DA6600C10CB4 /* GameViewController.swift in Sources */,
+				4554020E2AD7E4B700C10CB4 /* Bird.swift in Sources */,
 				455401F42AD7DA6600C10CB4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
