@@ -9,11 +9,19 @@ import SpriteKit
 
 class Bird {
     
+    // Physics
     public var jumpImpulse = CGVector(dx: 0, dy: 400)
     
     public var mass: CGFloat = 1
     
     public var physicsRadius: CGFloat = 14
+    
+    // Animation
+    public var currentTexture: SKTexture!
+    
+    public var animationTextures: [SKTexture]!
+    
+    public var animationSpeed: CGFloat = 0.2
     
     private(set) var node: SKSpriteNode!
     
@@ -41,6 +49,11 @@ class Bird {
     public func jump() {
         node.physicsBody?.velocity = .zero
         node.physicsBody?.applyImpulse(jumpImpulse)
+    }
+    
+    public func flyAction() -> SKAction {
+        let action = SKAction.repeatForever(SKAction.animate(with: animationTextures, timePerFrame: animationSpeed))
+        return action
     }
     
 }
