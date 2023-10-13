@@ -9,6 +9,8 @@ import SpriteKit
 
 class GameScene: SKScene {
     
+    private var redBird = RedBird(texture: nil, color: .red, size: CGSize(width: 34, height: 24))
+    
     class func newGameScene() -> GameScene {
         // Load 'GameScene.sks' as an SKScene.
         guard let scene = SKScene(fileNamed: "GameScene") as? GameScene else {
@@ -23,7 +25,7 @@ class GameScene: SKScene {
     }
     
     func setUpScene() {
-        
+        addChild(redBird)
         
     }
     
@@ -65,7 +67,7 @@ extension GameScene {
 extension GameScene {
 
     override func mouseDown(with event: NSEvent) {
-        
+        redBird.jump()
     }
     
     override func mouseDragged(with event: NSEvent) {

@@ -7,7 +7,7 @@
 
 import SpriteKit
 
-class Bird {
+class Bird: SKSpriteNode {
     
     // Physics
     public var jumpImpulse = CGVector(dx: 0, dy: 400)
@@ -17,27 +17,25 @@ class Bird {
     public var physicsRadius: CGFloat = 14
     
     // Animation
-    public var currentTexture: SKTexture!
-    
     public var animationTextures: [SKTexture]!
     
     public var animationSpeed: CGFloat = 0.2
     
-    private(set) var node: SKSpriteNode!
-    
-    init() {
-        
+    override init(texture: SKTexture?, color: NSColor, size: CGSize) {
+        super.init(texture: texture, color: color, size: size)
         configureBird()
-        
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
     }
     
     public func configureBird() {
-        node = SKSpriteNode(imageNamed: "redbird-midflap")
-        node.physicsBody = configurePhysics(circleOfRadius: physicsRadius)
-        node.physicsBody?.density = 0
-        node.physicsBody?.friction = 0
-        node.physicsBody?.restitution = 0
-        node.physicsBody?.mass = mass
+        physicsBody = configurePhysics(circleOfRadius: physicsRadius)
+        physicsBody?.density = 0
+        physicsBody?.friction = 0
+        physicsBody?.restitution = 0
+        physicsBody?.mass = mass
     }
     
     public func configurePhysics(circleOfRadius: CGFloat) -> SKPhysicsBody {
@@ -47,8 +45,8 @@ class Bird {
     }
     
     public func jump() {
-        node.physicsBody?.velocity = .zero
-        node.physicsBody?.applyImpulse(jumpImpulse)
+        physicsBody?.velocity = .zero
+        physicsBody?.applyImpulse(jumpImpulse)
     }
     
     public func flyAction() -> SKAction {

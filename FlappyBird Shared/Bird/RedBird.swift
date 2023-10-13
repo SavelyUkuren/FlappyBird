@@ -9,17 +9,18 @@ import SpriteKit
 
 class RedBird: Bird {
     
-    override init() {
-        super.init()
-        
-        currentTexture = SKTexture(imageNamed: "redbird-midflap")
-        node.texture = currentTexture
+    override init(texture: SKTexture?, color: NSColor, size: CGSize) {
+        super.init(texture: texture, color: color, size: size)
         
         animationTextures = configureAnimationTextures()
         
-        node.run(flyAction())
-        node.xScale = 2
-        node.yScale = 2
+        run(flyAction())
+        xScale = 2
+        yScale = 2
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
     }
     
     private func configureAnimationTextures() -> [SKTexture] {
