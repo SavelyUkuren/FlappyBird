@@ -24,6 +24,8 @@
 		4554020E2AD7E4B700C10CB4 /* Bird.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4554020C2AD7E4B700C10CB4 /* Bird.swift */; };
 		455402102AD7FD6200C10CB4 /* RedBird.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4554020F2AD7FD6200C10CB4 /* RedBird.swift */; };
 		455402112AD7FD6200C10CB4 /* RedBird.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4554020F2AD7FD6200C10CB4 /* RedBird.swift */; };
+		455402202ADB1C7C00C10CB4 /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4554021F2ADB1C7C00C10CB4 /* Base.swift */; };
+		455402212ADB1C7C00C10CB4 /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4554021F2ADB1C7C00C10CB4 /* Base.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,7 @@
 		455401FA2AD7DA6600C10CB4 /* FlappyBird_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FlappyBird_macOS.entitlements; sourceTree = "<group>"; };
 		4554020C2AD7E4B700C10CB4 /* Bird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bird.swift; sourceTree = "<group>"; };
 		4554020F2AD7FD6200C10CB4 /* RedBird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedBird.swift; sourceTree = "<group>"; };
+		4554021F2ADB1C7C00C10CB4 /* Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +78,7 @@
 		455401D72AD7DA6400C10CB4 /* FlappyBird Shared */ = {
 			isa = PBXGroup;
 			children = (
+				4554021E2ADB1C6A00C10CB4 /* Environment */,
 				4554020B2AD7E49500C10CB4 /* Bird */,
 				455401D92AD7DA6400C10CB4 /* GameScene.sks */,
 				455401DA2AD7DA6400C10CB4 /* GameScene.swift */,
@@ -121,6 +125,14 @@
 				4554020F2AD7FD6200C10CB4 /* RedBird.swift */,
 			);
 			path = Bird;
+			sourceTree = "<group>";
+		};
+		4554021E2ADB1C6A00C10CB4 /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				4554021F2ADB1C7C00C10CB4 /* Base.swift */,
+			);
+			path = Environment;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,6 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				455402202ADB1C7C00C10CB4 /* Base.swift in Sources */,
 				455401FF2AD7DA6600C10CB4 /* GameScene.swift in Sources */,
 				455401E62AD7DA6600C10CB4 /* GameViewController.swift in Sources */,
 				455402102AD7FD6200C10CB4 /* RedBird.swift in Sources */,
@@ -238,6 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				455402212ADB1C7C00C10CB4 /* Base.swift in Sources */,
 				455402002AD7DA6600C10CB4 /* GameScene.swift in Sources */,
 				455401F62AD7DA6600C10CB4 /* GameViewController.swift in Sources */,
 				455402112AD7FD6200C10CB4 /* RedBird.swift in Sources */,

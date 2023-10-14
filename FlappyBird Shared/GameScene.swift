@@ -11,6 +11,10 @@ class GameScene: SKScene {
     
     private var redBird = RedBird(texture: nil, color: .red, size: CGSize(width: 34, height: 24))
     
+    private var base = Base(texture: nil, color: .red, size: CGSize(width: 336, height: 112))
+    
+    private var startMessage = SKSpriteNode(imageNamed: "message")
+    
     class func newGameScene() -> GameScene {
         // Load 'GameScene.sks' as an SKScene.
         guard let scene = SKScene(fileNamed: "GameScene") as? GameScene else {
@@ -25,8 +29,16 @@ class GameScene: SKScene {
     }
     
     func setUpScene() {
-        addChild(redBird)
+        base.position.y = -460
+        base.startMove()
         
+        redBird.position.y = 150
+        
+        startMessage.setScale(2.5)
+        
+        addChild(startMessage)
+        addChild(redBird)
+        addChild(base)
     }
     
     override func didMove(to view: SKView) {
@@ -35,6 +47,7 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
+        base.update(currentTime)
     }
 }
 
@@ -67,7 +80,7 @@ extension GameScene {
 extension GameScene {
 
     override func mouseDown(with event: NSEvent) {
-        redBird.jump()
+        
     }
     
     override func mouseDragged(with event: NSEvent) {
@@ -76,6 +89,12 @@ extension GameScene {
     
     override func mouseUp(with event: NSEvent) {
         
+    }
+    
+    override func keyDown(with event: NSEvent) {
+        startMessage.removeFromParent()
+        redBird.startFlying()
+        redBird.jump()
     }
 
 }

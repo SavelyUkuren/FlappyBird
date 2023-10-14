@@ -31,11 +31,14 @@ class Bird: SKSpriteNode {
     }
     
     public func configureBird() {
+        zPosition = 10
+        
         physicsBody = configurePhysics(circleOfRadius: physicsRadius)
         physicsBody?.density = 0
         physicsBody?.friction = 0
         physicsBody?.restitution = 0
         physicsBody?.mass = mass
+        physicsBody?.affectedByGravity = false
     }
     
     public func configurePhysics(circleOfRadius: CGFloat) -> SKPhysicsBody {
@@ -52,6 +55,14 @@ class Bird: SKSpriteNode {
     public func flyAction() -> SKAction {
         let action = SKAction.repeatForever(SKAction.animate(with: animationTextures, timePerFrame: animationSpeed))
         return action
+    }
+    
+    public func startFlying() {
+        physicsBody?.affectedByGravity = true
+    }
+    
+    public func stopFlying() {
+        physicsBody?.affectedByGravity = false
     }
     
 }
