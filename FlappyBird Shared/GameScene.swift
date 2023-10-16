@@ -19,6 +19,8 @@ class GameScene: SKScene {
     
     private var startMessage = SKSpriteNode(imageNamed: "message")
     
+    private var isGameStart = false
+    
     class func newGameScene() -> GameScene {
         // Load 'GameScene.sks' as an SKScene.
         guard let scene = SKScene(fileNamed: "GameScene") as? GameScene else {
@@ -33,26 +35,10 @@ class GameScene: SKScene {
     }
     
     func setUpScene() {
-        pipes.position.y = -330
-        pipes.position.x = 500
-        pipes.setScale(2)
-        pipes.startMove()
-        
-        base.position.y = -350
-        base.setScale(2)
-        base.startMove()
-        
-        
-        redBird.position.y = 150
-        redBird.setScale(2)
-        
-        startMessage.setScale(2.5)
-        
-        //addChild(startMessage)
-        addChild(redBird)
-        addChild(base)
-        addChild(pipes)
-        
+        configurePipes()
+        configureBase()
+        configureBird()
+        configureStartMessage()
         configureBackgroundImage()
     }
     
@@ -75,6 +61,40 @@ class GameScene: SKScene {
         backgroundImage.position.y = 100
         
         addChild(backgroundImage)
+    }
+    
+    private func configurePipes() {
+        pipes.position.y = -330
+        pipes.position.x = 1000
+        pipes.zPosition = 1
+        pipes.setScale(2)
+        
+        addChild(pipes)
+    }
+    
+    private func configureBase() {
+        base.position.y = -350
+        base.zPosition = 2
+        base.setScale(2)
+        base.startMove()
+        
+        addChild(base)
+    }
+    
+    private func configureBird() {
+        redBird.position.x = -300
+        redBird.position.y = 150
+        redBird.zPosition = 3
+        redBird.setScale(2)
+        
+        addChild(redBird)
+    }
+    
+    private func configureStartMessage() {
+        startMessage.setScale(2.5)
+        startMessage.zPosition = 20
+        
+        addChild(startMessage)
     }
 }
 
@@ -119,9 +139,16 @@ extension GameScene {
     }
     
     override func keyDown(with event: NSEvent) {
-        startMessage.removeFromParent()
-        redBird.startFlying()
+        
+        if !isGameStart {
+            startMessage.removeFromParent()
+            pipes.startMove()
+            redBird.startFlying()
+        }
+        isGameStart = true
+        
         redBird.jump()
+        
     }
 
 }

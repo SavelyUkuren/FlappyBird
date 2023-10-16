@@ -31,8 +31,6 @@ class Bird: SKSpriteNode {
     }
     
     public func configureBird() {
-        zPosition = 10
-        
         physicsBody = configurePhysics(circleOfRadius: physicsRadius)
         physicsBody?.density = 0
         physicsBody?.friction = 0
