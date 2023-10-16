@@ -11,12 +11,15 @@ class Base: SKSpriteNode {
     
     public var velocity: CGFloat = 100
     
+    // Value at which the base remove
+    public var leftScreenEdge: CGFloat = -1000
+    
     private var grounds: [SKSpriteNode] = []
+    
+    private var baseCount = 6
     
     override init(texture: SKTexture?, color: NSColor, size: CGSize) {
         super.init(texture: texture, color: color, size: size)
-        // TODO: Make scaleble
-        //setScale(2)
         createGrounds()
     }
     
@@ -40,7 +43,7 @@ class Base: SKSpriteNode {
     }
     
     private func createGrounds() {
-        for i in -1..<3 {
+        for i in -(baseCount / 2)..<baseCount {
             let s = SKSpriteNode(imageNamed: "base")
             s.zPosition = 5
             s.position.x = size.width * CGFloat(i)
@@ -59,8 +62,8 @@ class Base: SKSpriteNode {
     
     private func resetBase() {
         // If the first base out of screen, then the first base moves to last base position
-        if grounds[0].position.x <= -self.size.width * 2 {
-            grounds[0].position.x = grounds.last!.position.x + self.size.width
+        if grounds[0].position.x <= leftScreenEdge {
+            grounds[0].position.x = grounds.last!.position.x + (self.size.width / xScale)
             
             let firstBase = grounds.removeFirst()
             grounds.append(firstBase)

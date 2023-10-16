@@ -9,7 +9,7 @@ import SpriteKit
 
 class Pipe: SKSpriteNode {
     
-    public var distanceBetweenTopLowPipe: CGFloat = 150
+    public var distanceBetweenTopLowPipe: CGFloat = 100
     
     private var node: SKSpriteNode!
     

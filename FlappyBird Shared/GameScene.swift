@@ -33,14 +33,16 @@ class GameScene: SKScene {
     func setUpScene() {
         pipes.position.y = -330
         pipes.position.x = 500
+        pipes.setScale(2)
         pipes.startMove()
         
         base.position.y = -350
+        base.setScale(2)
         base.startMove()
         
         
-        
         redBird.position.y = 150
+        redBird.setScale(2)
         
         startMessage.setScale(2.5)
         
