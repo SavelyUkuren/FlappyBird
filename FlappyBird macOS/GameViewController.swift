@@ -18,7 +18,7 @@ class GameViewController: NSViewController {
         
         // Present the scene
         let skView = self.view as! SKView
-        skView.frame = NSRect(x: 0, y: 0, width: 375, height: 667)
+        skView.frame = NSRect(x: 0, y: 0, width: 1920, height: 1080)
         skView.presentScene(scene)
         
         skView.ignoresSiblingOrder = true

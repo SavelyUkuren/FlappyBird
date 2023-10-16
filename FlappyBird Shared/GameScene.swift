@@ -13,6 +13,8 @@ class GameScene: SKScene {
     
     private var base = Base(texture: nil, color: .red, size: CGSize(width: 336, height: 112))
     
+    private var pipes = Pipes(texture: nil, color: .clear, size: CGSize(width: 52, height: 320))
+    
     private var startMessage = SKSpriteNode(imageNamed: "message")
     
     class func newGameScene() -> GameScene {
@@ -29,16 +31,23 @@ class GameScene: SKScene {
     }
     
     func setUpScene() {
-        base.position.y = -460
+        pipes.position.y = -330
+        pipes.position.x = 500
+        pipes.startMove()
+        
+        base.position.y = -350
         base.startMove()
+        
+        
         
         redBird.position.y = 150
         
         startMessage.setScale(2.5)
         
-        addChild(startMessage)
+        //addChild(startMessage)
         addChild(redBird)
         addChild(base)
+        addChild(pipes)
     }
     
     override func didMove(to view: SKView) {
@@ -48,6 +57,7 @@ class GameScene: SKScene {
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
         base.update(currentTime)
+        pipes.update(currentTime)
     }
 }
 

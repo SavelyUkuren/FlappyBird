@@ -26,6 +26,10 @@
 		455402112AD7FD6200C10CB4 /* RedBird.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4554020F2AD7FD6200C10CB4 /* RedBird.swift */; };
 		455402202ADB1C7C00C10CB4 /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4554021F2ADB1C7C00C10CB4 /* Base.swift */; };
 		455402212ADB1C7C00C10CB4 /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4554021F2ADB1C7C00C10CB4 /* Base.swift */; };
+		455402232ADD8FEA00C10CB4 /* Pipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455402222ADD8FEA00C10CB4 /* Pipes.swift */; };
+		455402242ADD8FEA00C10CB4 /* Pipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455402222ADD8FEA00C10CB4 /* Pipes.swift */; };
+		455402262ADD94D700C10CB4 /* Pipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455402252ADD94D700C10CB4 /* Pipe.swift */; };
+		455402272ADD94D700C10CB4 /* Pipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455402252ADD94D700C10CB4 /* Pipe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +49,8 @@
 		4554020C2AD7E4B700C10CB4 /* Bird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bird.swift; sourceTree = "<group>"; };
 		4554020F2AD7FD6200C10CB4 /* RedBird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedBird.swift; sourceTree = "<group>"; };
 		4554021F2ADB1C7C00C10CB4 /* Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
+		455402222ADD8FEA00C10CB4 /* Pipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pipes.swift; sourceTree = "<group>"; };
+		455402252ADD94D700C10CB4 /* Pipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pipe.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +137,8 @@
 			isa = PBXGroup;
 			children = (
 				4554021F2ADB1C7C00C10CB4 /* Base.swift */,
+				455402222ADD8FEA00C10CB4 /* Pipes.swift */,
+				455402252ADD94D700C10CB4 /* Pipe.swift */,
 			);
 			path = Environment;
 			sourceTree = "<group>";
@@ -241,8 +249,10 @@
 				455402202ADB1C7C00C10CB4 /* Base.swift in Sources */,
 				455401FF2AD7DA6600C10CB4 /* GameScene.swift in Sources */,
 				455401E62AD7DA6600C10CB4 /* GameViewController.swift in Sources */,
+				455402262ADD94D700C10CB4 /* Pipe.swift in Sources */,
 				455402102AD7FD6200C10CB4 /* RedBird.swift in Sources */,
 				4554020D2AD7E4B700C10CB4 /* Bird.swift in Sources */,
+				455402232ADD8FEA00C10CB4 /* Pipes.swift in Sources */,
 				455401E42AD7DA6600C10CB4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,8 +264,10 @@
 				455402212ADB1C7C00C10CB4 /* Base.swift in Sources */,
 				455402002AD7DA6600C10CB4 /* GameScene.swift in Sources */,
 				455401F62AD7DA6600C10CB4 /* GameViewController.swift in Sources */,
+				455402272ADD94D700C10CB4 /* Pipe.swift in Sources */,
 				455402112AD7FD6200C10CB4 /* RedBird.swift in Sources */,
 				4554020E2AD7E4B700C10CB4 /* Bird.swift in Sources */,
+				455402242ADD8FEA00C10CB4 /* Pipes.swift in Sources */,
 				455401F42AD7DA6600C10CB4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
