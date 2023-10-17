@@ -14,7 +14,7 @@ class Bird: SKSpriteNode {
     
     public var mass: CGFloat = 1
     
-    public var physicsRadius: CGFloat = 14
+    public var physicsRadius: CGFloat = 13
     
     // Animation
     public var animationTextures: [SKTexture]!
@@ -37,6 +37,8 @@ class Bird: SKSpriteNode {
         physicsBody?.restitution = 0
         physicsBody?.mass = mass
         physicsBody?.affectedByGravity = false
+        physicsBody?.categoryBitMask = PhysicsCollision.birdCategory
+        physicsBody?.collisionBitMask = PhysicsCollision.baseCategory | PhysicsCollision.pipeCategory
     }
     
     public func configurePhysics(circleOfRadius: CGFloat) -> SKPhysicsBody {

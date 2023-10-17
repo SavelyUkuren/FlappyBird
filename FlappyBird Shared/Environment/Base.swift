@@ -54,6 +54,7 @@ class Base: SKSpriteNode {
             s.physicsBody?.restitution = 0
             s.physicsBody?.allowsRotation = false
             s.physicsBody?.isDynamic = false
+            s.physicsBody?.categoryBitMask = PhysicsCollision.baseCategory
             
             grounds.append(s)
             addChild(s)

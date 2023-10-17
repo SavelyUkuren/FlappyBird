@@ -27,6 +27,8 @@ class Pipe: SKSpriteNode {
     private func configureLowerPipe() {
         let lowerPipe = SKSpriteNode(imageNamed: "pipe-green")
         
+        lowerPipe.physicsBody = configurePhysics(node: lowerPipe)
+        
         addChild(lowerPipe)
     }
     
@@ -36,8 +38,23 @@ class Pipe: SKSpriteNode {
         topPipe.zRotation = .pi
         topPipe.xScale = -1
         
+        topPipe.physicsBody = configurePhysics(node: topPipe)
         
         addChild(topPipe)
+    }
+    
+    private func configurePhysics(node: SKSpriteNode) -> SKPhysicsBody {
+        let physicsBody = SKPhysicsBody(texture: node.texture!, size: node.size)
+        
+        physicsBody.affectedByGravity = false
+        physicsBody.allowsRotation = false
+        physicsBody.isDynamic = false
+        physicsBody.friction = 0
+        physicsBody.restitution = 0
+        physicsBody.categoryBitMask = PhysicsCollision.pipeCategory
+        physicsBody.collisionBitMask = PhysicsCollision.birdCategory
+        
+        return physicsBody
     }
     
 }

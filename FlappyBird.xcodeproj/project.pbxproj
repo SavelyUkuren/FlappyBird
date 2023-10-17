@@ -30,6 +30,8 @@
 		455402242ADD8FEA00C10CB4 /* Pipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455402222ADD8FEA00C10CB4 /* Pipes.swift */; };
 		455402262ADD94D700C10CB4 /* Pipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455402252ADD94D700C10CB4 /* Pipe.swift */; };
 		455402272ADD94D700C10CB4 /* Pipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455402252ADD94D700C10CB4 /* Pipe.swift */; };
+		4554022A2ADE670200C10CB4 /* PhysicsCollision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455402292ADE670200C10CB4 /* PhysicsCollision.swift */; };
+		4554022B2ADE670200C10CB4 /* PhysicsCollision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455402292ADE670200C10CB4 /* PhysicsCollision.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,7 @@
 		4554021F2ADB1C7C00C10CB4 /* Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
 		455402222ADD8FEA00C10CB4 /* Pipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pipes.swift; sourceTree = "<group>"; };
 		455402252ADD94D700C10CB4 /* Pipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pipe.swift; sourceTree = "<group>"; };
+		455402292ADE670200C10CB4 /* PhysicsCollision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsCollision.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +87,7 @@
 		455401D72AD7DA6400C10CB4 /* FlappyBird Shared */ = {
 			isa = PBXGroup;
 			children = (
+				455402282ADE66E200C10CB4 /* Constants */,
 				4554021E2ADB1C6A00C10CB4 /* Environment */,
 				4554020B2AD7E49500C10CB4 /* Bird */,
 				455401D92AD7DA6400C10CB4 /* GameScene.sks */,
@@ -141,6 +145,14 @@
 				455402252ADD94D700C10CB4 /* Pipe.swift */,
 			);
 			path = Environment;
+			sourceTree = "<group>";
+		};
+		455402282ADE66E200C10CB4 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				455402292ADE670200C10CB4 /* PhysicsCollision.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,6 +263,7 @@
 				455401E62AD7DA6600C10CB4 /* GameViewController.swift in Sources */,
 				455402262ADD94D700C10CB4 /* Pipe.swift in Sources */,
 				455402102AD7FD6200C10CB4 /* RedBird.swift in Sources */,
+				4554022A2ADE670200C10CB4 /* PhysicsCollision.swift in Sources */,
 				4554020D2AD7E4B700C10CB4 /* Bird.swift in Sources */,
 				455402232ADD8FEA00C10CB4 /* Pipes.swift in Sources */,
 				455401E42AD7DA6600C10CB4 /* AppDelegate.swift in Sources */,
@@ -266,6 +279,7 @@
 				455401F62AD7DA6600C10CB4 /* GameViewController.swift in Sources */,
 				455402272ADD94D700C10CB4 /* Pipe.swift in Sources */,
 				455402112AD7FD6200C10CB4 /* RedBird.swift in Sources */,
+				4554022B2ADE670200C10CB4 /* PhysicsCollision.swift in Sources */,
 				4554020E2AD7E4B700C10CB4 /* Bird.swift in Sources */,
 				455402242ADD8FEA00C10CB4 /* Pipes.swift in Sources */,
 				455401F42AD7DA6600C10CB4 /* AppDelegate.swift in Sources */,
