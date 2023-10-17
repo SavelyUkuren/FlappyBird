@@ -19,6 +19,12 @@ class GameScene: SKScene {
     
     private var startMessage = SKSpriteNode(imageNamed: "message")
     
+    private var gameOverMessage = SKSpriteNode(imageNamed: "gameover")
+    
+    private var scoreLabel: SKLabelNode = SKLabelNode(fontNamed: "Flappy Bird")
+    
+    private var score = 0
+    
     private var gameState: GameState = .Menu
     
     class func newGameScene() -> GameScene {
@@ -42,6 +48,7 @@ class GameScene: SKScene {
         configureBird()
         configureStartMessage()
         configureBackgroundImage()
+        configureGameOverMessage()
     }
     
     override func didMove(to view: SKView) {
@@ -98,27 +105,56 @@ class GameScene: SKScene {
         addChild(startMessage)
     }
     
+    private func configureScoreLabel() {
+        scoreLabel.text = "0"
+        scoreLabel.position.y = 250
+        scoreLabel.zPosition = 5
+        scoreLabel.fontSize = 120
+        
+        addChild(scoreLabel)
+    }
+    
+    private func configureGameOverMessage() {
+        gameOverMessage.setScale(2.5)
+        gameOverMessage.zPosition = 10
+        gameOverMessage.alpha = 0
+        
+        addChild(gameOverMessage)
+    }
+    
     private func gameOver() {
+        gameOverMessage.alpha = 1
         pipes.stopMove()
         base.stopMove()
         redBird.stopAnimation()
     }
     
     private func startGame() {
+        configureScoreLabel()
         startMessage.removeFromParent()
         pipes.startMove()
         redBird.startFlying()
     }
     
     private func restartGame() {
+        score = 0
+        updateScoreLabel()
+        
+        gameOverMessage.alpha = 0
+        
         pipes.restart()
         base.startMove()
         redBird.restart()
         
         redBird.removeFromParent()
+        scoreLabel.removeFromParent()
         
         configureBird()
         configureStartMessage()
+    }
+    
+    private func updateScoreLabel() {
+        scoreLabel.text = "\(score)"
     }
     
 }
@@ -135,6 +171,10 @@ extension GameScene: SKPhysicsContactDelegate {
         case PhysicsCollision.birdCategory & PhysicsCollision.pipeCategory:
             gameOver()
             gameState = .GameOver
+            break
+        case PhysicsCollision.birdCategory & PhysicsCollision.triggerCategory:
+            score += 1
+            updateScoreLabel()
             break
         default:
             break

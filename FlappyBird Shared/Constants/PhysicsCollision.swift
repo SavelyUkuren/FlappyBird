@@ -12,5 +12,6 @@ class PhysicsCollision {
     static let baseCategory: UInt32 = 0b0001
     static let pipeCategory: UInt32 = 0b0010
     static let birdCategory: UInt32 = 0b0011
+    static let triggerCategory: UInt32 = 0b0100
     
 }

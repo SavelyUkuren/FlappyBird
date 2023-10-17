@@ -11,13 +11,14 @@ class Pipe: SKSpriteNode {
     
     public var distanceBetweenTopLowPipe: CGFloat = 100
     
-    private var node: SKSpriteNode!
+    private var triggerNode: SKSpriteNode!
     
     override init(texture: SKTexture?, color: NSColor, size: CGSize) {
         super.init(texture: texture, color: color, size: size)
         
         configureLowerPipe()
         configureTopPipe()
+        configureTrigger()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -41,6 +42,21 @@ class Pipe: SKSpriteNode {
         topPipe.physicsBody = configurePhysics(node: topPipe)
         
         addChild(topPipe)
+    }
+    
+    private func configureTrigger() {
+        triggerNode = SKSpriteNode(color: .red, size: CGSize(width: 10, height: distanceBetweenTopLowPipe))
+        triggerNode.position.y = 210
+        triggerNode.position.x = 10
+        triggerNode.alpha = 0.5
+        
+        triggerNode.physicsBody = SKPhysicsBody(rectangleOf: triggerNode.size)
+        triggerNode.physicsBody?.affectedByGravity = false
+        triggerNode.physicsBody?.isDynamic = false
+        triggerNode.physicsBody?.categoryBitMask = PhysicsCollision.triggerCategory
+        triggerNode.physicsBody?.contactTestBitMask = PhysicsCollision.birdCategory
+        
+        addChild(triggerNode)
     }
     
     private func configurePhysics(node: SKSpriteNode) -> SKPhysicsBody {

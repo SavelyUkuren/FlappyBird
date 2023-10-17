@@ -34,6 +34,8 @@
 		4554022B2ADE670200C10CB4 /* PhysicsCollision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455402292ADE670200C10CB4 /* PhysicsCollision.swift */; };
 		4554022D2ADEA7D000C10CB4 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4554022C2ADEA7D000C10CB4 /* GameState.swift */; };
 		4554022E2ADEA7D000C10CB4 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4554022C2ADEA7D000C10CB4 /* GameState.swift */; };
+		455402312ADEAD4700C10CB4 /* Flappy-Bird.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 455402302ADEAD4700C10CB4 /* Flappy-Bird.ttf */; };
+		455402322ADEAD4700C10CB4 /* Flappy-Bird.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 455402302ADEAD4700C10CB4 /* Flappy-Bird.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +59,8 @@
 		455402252ADD94D700C10CB4 /* Pipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pipe.swift; sourceTree = "<group>"; };
 		455402292ADE670200C10CB4 /* PhysicsCollision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsCollision.swift; sourceTree = "<group>"; };
 		4554022C2ADEA7D000C10CB4 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
+		455402302ADEAD4700C10CB4 /* Flappy-Bird.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Flappy-Bird.ttf"; sourceTree = "<group>"; };
+		455402332ADEAF0900C10CB4 /* FlappyBird-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "FlappyBird-iOS-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,7 @@
 		455401D72AD7DA6400C10CB4 /* FlappyBird Shared */ = {
 			isa = PBXGroup;
 			children = (
+				4554022F2ADEAD3B00C10CB4 /* Font */,
 				455402282ADE66E200C10CB4 /* Constants */,
 				4554021E2ADB1C6A00C10CB4 /* Environment */,
 				4554020B2AD7E49500C10CB4 /* Bird */,
@@ -112,6 +117,7 @@
 		455401E22AD7DA6600C10CB4 /* FlappyBird iOS */ = {
 			isa = PBXGroup;
 			children = (
+				455402332ADEAF0900C10CB4 /* FlappyBird-iOS-Info.plist */,
 				455401E32AD7DA6600C10CB4 /* AppDelegate.swift */,
 				455401E52AD7DA6600C10CB4 /* GameViewController.swift */,
 				455401E72AD7DA6600C10CB4 /* Main.storyboard */,
@@ -157,6 +163,14 @@
 				4554022C2ADEA7D000C10CB4 /* GameState.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		4554022F2ADEAD3B00C10CB4 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				455402302ADEAD4700C10CB4 /* Flappy-Bird.ttf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +256,7 @@
 				455401E92AD7DA6600C10CB4 /* Main.storyboard in Resources */,
 				455401EC2AD7DA6600C10CB4 /* LaunchScreen.storyboard in Resources */,
 				455402012AD7DA6600C10CB4 /* Assets.xcassets in Resources */,
+				455402312ADEAD4700C10CB4 /* Flappy-Bird.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				455401F92AD7DA6600C10CB4 /* Main.storyboard in Resources */,
+				455402322ADEAD4700C10CB4 /* Flappy-Bird.ttf in Resources */,
 				455401FE2AD7DA6600C10CB4 /* GameScene.sks in Resources */,
 				455402022AD7DA6600C10CB4 /* Assets.xcassets in Resources */,
 			);
@@ -445,6 +461,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8BPKDD8276;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "FlappyBird-iOS-Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -475,6 +492,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8BPKDD8276;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "FlappyBird-iOS-Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
