@@ -53,6 +53,7 @@ class Pipe: SKSpriteNode {
         physicsBody.restitution = 0
         physicsBody.categoryBitMask = PhysicsCollision.pipeCategory
         physicsBody.collisionBitMask = PhysicsCollision.birdCategory
+        physicsBody.contactTestBitMask = PhysicsCollision.pipeCategory
         
         return physicsBody
     }

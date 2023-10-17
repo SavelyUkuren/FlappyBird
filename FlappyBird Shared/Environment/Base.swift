@@ -30,7 +30,7 @@ class Base: SKSpriteNode {
     public func startMove() {
         grounds.forEach { base in
             let moveAction = SKAction.move(by: CGVector(dx: -velocity, dy: 0), duration: 1)
-            base.run(SKAction.repeatForever(moveAction))
+            base.run(SKAction.repeatForever(moveAction), withKey: "move")
         }
     }
     

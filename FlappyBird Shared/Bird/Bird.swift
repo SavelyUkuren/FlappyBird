@@ -39,6 +39,7 @@ class Bird: SKSpriteNode {
         physicsBody?.affectedByGravity = false
         physicsBody?.categoryBitMask = PhysicsCollision.birdCategory
         physicsBody?.collisionBitMask = PhysicsCollision.baseCategory | PhysicsCollision.pipeCategory
+        physicsBody?.contactTestBitMask = PhysicsCollision.birdCategory
     }
     
     public func configurePhysics(circleOfRadius: CGFloat) -> SKPhysicsBody {
@@ -61,8 +62,13 @@ class Bird: SKSpriteNode {
         physicsBody?.affectedByGravity = true
     }
     
-    public func stopFlying() {
+    public func restart() {
         physicsBody?.affectedByGravity = false
+        run(flyAction(), withKey: "flyAnimation")
+    }
+    
+    public func stopAnimation() {
+        removeAction(forKey: "flyAnimation")
     }
     
 }

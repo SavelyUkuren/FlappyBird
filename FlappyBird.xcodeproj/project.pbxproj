@@ -32,6 +32,8 @@
 		455402272ADD94D700C10CB4 /* Pipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455402252ADD94D700C10CB4 /* Pipe.swift */; };
 		4554022A2ADE670200C10CB4 /* PhysicsCollision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455402292ADE670200C10CB4 /* PhysicsCollision.swift */; };
 		4554022B2ADE670200C10CB4 /* PhysicsCollision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455402292ADE670200C10CB4 /* PhysicsCollision.swift */; };
+		4554022D2ADEA7D000C10CB4 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4554022C2ADEA7D000C10CB4 /* GameState.swift */; };
+		4554022E2ADEA7D000C10CB4 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4554022C2ADEA7D000C10CB4 /* GameState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,7 @@
 		455402222ADD8FEA00C10CB4 /* Pipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pipes.swift; sourceTree = "<group>"; };
 		455402252ADD94D700C10CB4 /* Pipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pipe.swift; sourceTree = "<group>"; };
 		455402292ADE670200C10CB4 /* PhysicsCollision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsCollision.swift; sourceTree = "<group>"; };
+		4554022C2ADEA7D000C10CB4 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				455402292ADE670200C10CB4 /* PhysicsCollision.swift */,
+				4554022C2ADEA7D000C10CB4 /* GameState.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -265,6 +269,7 @@
 				455402102AD7FD6200C10CB4 /* RedBird.swift in Sources */,
 				4554022A2ADE670200C10CB4 /* PhysicsCollision.swift in Sources */,
 				4554020D2AD7E4B700C10CB4 /* Bird.swift in Sources */,
+				4554022D2ADEA7D000C10CB4 /* GameState.swift in Sources */,
 				455402232ADD8FEA00C10CB4 /* Pipes.swift in Sources */,
 				455401E42AD7DA6600C10CB4 /* AppDelegate.swift in Sources */,
 			);
@@ -281,6 +286,7 @@
 				455402112AD7FD6200C10CB4 /* RedBird.swift in Sources */,
 				4554022B2ADE670200C10CB4 /* PhysicsCollision.swift in Sources */,
 				4554020E2AD7E4B700C10CB4 /* Bird.swift in Sources */,
+				4554022E2ADEA7D000C10CB4 /* GameState.swift in Sources */,
 				455402242ADD8FEA00C10CB4 /* Pipes.swift in Sources */,
 				455401F42AD7DA6600C10CB4 /* AppDelegate.swift in Sources */,
 			);

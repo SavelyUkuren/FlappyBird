@@ -47,10 +47,18 @@ class Pipes: SKSpriteNode {
         resetPipes()
     }
     
+    public func restart() {
+        for i in 0..<pipeArray.count {
+            let pipe = pipeArray[i]
+            pipe.position.x = CGFloat(i) * distance
+            pipe.position.y = CGFloat.random(in: randomHeight)
+        }
+    }
+    
     private func configurePipes() {
         for i in 0..<pipesCount {
             let pipe = Pipe(texture: texture, color: color, size: size)
-            pipe.position.x = CGFloat(i) * distance + position.x
+            pipe.position.x = CGFloat(i) * distance
             pipe.position.y = CGFloat.random(in: randomHeight)
             
             pipeArray.append(pipe)

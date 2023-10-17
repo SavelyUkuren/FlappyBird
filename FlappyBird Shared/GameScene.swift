@@ -19,7 +19,7 @@ class GameScene: SKScene {
     
     private var startMessage = SKSpriteNode(imageNamed: "message")
     
-    private var isGameStart = false
+    private var gameState: GameState = .Menu
     
     class func newGameScene() -> GameScene {
         // Load 'GameScene.sks' as an SKScene.
@@ -35,6 +35,8 @@ class GameScene: SKScene {
     }
     
     func setUpScene() {
+        self.physicsWorld.contactDelegate = self
+        
         configurePipes()
         configureBase()
         configureBird()
@@ -47,7 +49,6 @@ class GameScene: SKScene {
     }
     
     override func update(_ currentTime: TimeInterval) {
-        // Called before each frame is rendered
         base.update(currentTime)
         pipes.update(currentTime)
     }
@@ -96,6 +97,50 @@ class GameScene: SKScene {
         
         addChild(startMessage)
     }
+    
+    private func gameOver() {
+        pipes.stopMove()
+        base.stopMove()
+        redBird.stopAnimation()
+    }
+    
+    private func startGame() {
+        startMessage.removeFromParent()
+        pipes.startMove()
+        redBird.startFlying()
+    }
+    
+    private func restartGame() {
+        pipes.restart()
+        base.startMove()
+        redBird.restart()
+        
+        redBird.removeFromParent()
+        
+        configureBird()
+        configureStartMessage()
+    }
+    
+}
+
+extension GameScene: SKPhysicsContactDelegate {
+    func didBegin(_ contact: SKPhysicsContact) {
+        let result = contact.bodyA.categoryBitMask & contact.bodyB.categoryBitMask
+        
+        switch result {
+        case PhysicsCollision.birdCategory & PhysicsCollision.baseCategory:
+            gameOver()
+            gameState = .GameOver
+            break
+        case PhysicsCollision.birdCategory & PhysicsCollision.pipeCategory:
+            gameOver()
+            gameState = .GameOver
+            break
+        default:
+            break
+        }
+        
+    }
 }
 
 #if os(iOS) || os(tvOS)
@@ -140,14 +185,20 @@ extension GameScene {
     
     override func keyDown(with event: NSEvent) {
         
-        if !isGameStart {
-            startMessage.removeFromParent()
-            pipes.startMove()
+        if gameState == .Menu {
+            startGame()
             redBird.startFlying()
+            gameState = .Playing
         }
-        isGameStart = true
         
-        redBird.jump()
+        if gameState == .Playing {
+            redBird.jump()
+        }
+        
+        if gameState == .GameOver {
+            restartGame()
+            gameState = .Menu
+        }
         
     }
 

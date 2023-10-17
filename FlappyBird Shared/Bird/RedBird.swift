@@ -14,9 +14,7 @@ class RedBird: Bird {
         
         animationTextures = configureAnimationTextures()
         
-        run(flyAction())
-//        xScale = 2
-//        yScale = 2
+        run(flyAction(), withKey: "flyAnimation")
     }
     
     required init?(coder aDecoder: NSCoder) {
