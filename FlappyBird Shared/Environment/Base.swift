@@ -55,6 +55,7 @@ class Base: SKSpriteNode {
     private func createGrounds() {
         for i in -(baseCount / 2)..<baseCount {
             let s = SKSpriteNode(imageNamed: "base")
+            s.texture?.filteringMode = .nearest
             s.zPosition = 5
             s.position.x = size.width * CGFloat(i)
             

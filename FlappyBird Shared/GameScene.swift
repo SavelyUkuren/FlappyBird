@@ -68,6 +68,7 @@ class GameScene: SKScene {
         backgroundImage.setScale(1.6)
         backgroundImage.zPosition = -1
         backgroundImage.position.y = 100
+        backgroundImage.texture?.filteringMode = .nearest
         
         addChild(backgroundImage)
     }
@@ -116,6 +117,7 @@ class GameScene: SKScene {
     private func configureStartMessage() {
         startMessage.setScale(2.5)
         startMessage.zPosition = 20
+        startMessage.texture?.filteringMode = .nearest
         
         addChild(startMessage)
     }
@@ -133,6 +135,7 @@ class GameScene: SKScene {
         gameOverMessage.setScale(2.5)
         gameOverMessage.zPosition = 10
         gameOverMessage.alpha = 0
+        gameOverMessage.texture?.filteringMode = .nearest
         
         addChild(gameOverMessage)
     }

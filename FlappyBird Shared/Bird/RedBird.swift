@@ -42,6 +42,10 @@ class RedBird: Bird {
         arr.append(SKTexture(imageNamed: "redbird-upflap"))
         arr.append(SKTexture(imageNamed: "redbird-midflap"))
         
+        arr.forEach { texture in
+            texture.filteringMode = .nearest
+        }
+        
         return arr
     }
     

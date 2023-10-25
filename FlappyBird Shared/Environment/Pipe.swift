@@ -45,6 +45,7 @@ class Pipe: SKSpriteNode {
         let lowerPipe = SKSpriteNode(imageNamed: "pipe-green")
         
         lowerPipe.physicsBody = configurePhysics(node: lowerPipe)
+        lowerPipe.texture?.filteringMode = .nearest
         
         addChild(lowerPipe)
     }
@@ -56,6 +57,7 @@ class Pipe: SKSpriteNode {
         topPipe.xScale = -1
         
         topPipe.physicsBody = configurePhysics(node: topPipe)
+        topPipe.texture?.filteringMode = .nearest
         
         addChild(topPipe)
     }
