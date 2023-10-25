@@ -18,10 +18,20 @@ class Base: SKSpriteNode {
     
     private var baseCount = 6
     
+#if os(OSX)
     override init(texture: SKTexture?, color: NSColor, size: CGSize) {
         super.init(texture: texture, color: color, size: size)
         createGrounds()
     }
+#endif
+    
+#if os(iOS)
+    override init(texture: SKTexture?, color: UIColor, size: CGSize) {
+        super.init(texture: texture, color: color, size: size)
+        baseCount = 3
+        createGrounds()
+    }
+#endif
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

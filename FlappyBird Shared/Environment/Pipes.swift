@@ -22,11 +22,22 @@ class Pipes: SKSpriteNode {
     
     private var pipesCount = 10
     
+#if os(OSX)
     override init(texture: SKTexture?, color: NSColor, size: CGSize) {
         super.init(texture: texture, color: color, size: size)
         
         configurePipes()
     }
+#endif
+    
+#if os(iOS)
+    override init(texture: SKTexture?, color: UIColor, size: CGSize) {
+        super.init(texture: texture, color: color, size: size)
+        
+        pipesCount = 4
+        configurePipes()
+    }
+#endif
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

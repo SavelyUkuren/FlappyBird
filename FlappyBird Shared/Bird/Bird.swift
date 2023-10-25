@@ -23,10 +23,19 @@ class Bird: SKSpriteNode {
     
     public var animationSpeed: CGFloat = 0.2
     
+#if os(OSX)
     override init(texture: SKTexture?, color: NSColor, size: CGSize) {
         super.init(texture: texture, color: color, size: size)
         configureBird()
     }
+#endif
+    
+#if os(iOS)
+    override init(texture: SKTexture?, color: UIColor, size: CGSize) {
+        super.init(texture: texture, color: color, size: size)
+        configureBird()
+    }
+#endif
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

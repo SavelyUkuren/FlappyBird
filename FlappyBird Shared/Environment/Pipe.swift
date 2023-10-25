@@ -13,6 +13,8 @@ class Pipe: SKSpriteNode {
     
     private var triggerNode: SKSpriteNode!
     
+#if os(OSX)
+    
     override init(texture: SKTexture?, color: NSColor, size: CGSize) {
         super.init(texture: texture, color: color, size: size)
         
@@ -20,6 +22,20 @@ class Pipe: SKSpriteNode {
         configureTopPipe()
         configureTrigger()
     }
+    
+#endif
+    
+#if os(iOS)
+    
+    override init(texture: SKTexture?, color: UIColor, size: CGSize) {
+        super.init(texture: texture, color: color, size: size)
+        
+        configureLowerPipe()
+        configureTopPipe()
+        configureTrigger()
+    }
+    
+#endif
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

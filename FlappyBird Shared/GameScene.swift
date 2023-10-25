@@ -82,7 +82,14 @@ class GameScene: SKScene {
     }
     
     private func configureBase() {
+        #if os(OSX)
         base.position.y = -350
+        #endif
+        
+        #if os(iOS)
+        base.position.y = -400
+        #endif
+        
         base.zPosition = 2
         base.setScale(2)
         base.startMove()
@@ -91,7 +98,14 @@ class GameScene: SKScene {
     }
     
     private func configureBird() {
+        #if os(OSX)
         redBird.position.x = -300
+        #endif
+        
+        #if os(iOS)
+        redBird.position.x = -150
+        #endif
+        
         redBird.position.y = 150
         redBird.zPosition = 3
         redBird.setScale(2)
@@ -158,6 +172,23 @@ class GameScene: SKScene {
         scoreLabel.text = "\(score)"
     }
     
+    private func tapOnScreen() {
+        if gameState == .Menu {
+            startGame()
+            redBird.startFlying()
+            gameState = .Playing
+        }
+        
+        if gameState == .Playing {
+            redBird.jump()
+        }
+        
+        if gameState == .GameOver {
+            restartGame()
+            gameState = .Menu
+        }
+    }
+    
 }
 
 extension GameScene: SKPhysicsContactDelegate {
@@ -189,19 +220,7 @@ extension GameScene: SKPhysicsContactDelegate {
 extension GameScene {
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-    }
-    
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-    }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-    }
-    
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
+        tapOnScreen()
     }
     
    
@@ -226,20 +245,7 @@ extension GameScene {
     
     override func keyDown(with event: NSEvent) {
         
-        if gameState == .Menu {
-            startGame()
-            redBird.startFlying()
-            gameState = .Playing
-        }
-        
-        if gameState == .Playing {
-            redBird.jump()
-        }
-        
-        if gameState == .GameOver {
-            restartGame()
-            gameState = .Menu
-        }
+        tapOnScreen()
         
     }
 

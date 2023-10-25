@@ -9,6 +9,7 @@ import SpriteKit
 
 class RedBird: Bird {
     
+#if os(OSX)
     override init(texture: SKTexture?, color: NSColor, size: CGSize) {
         super.init(texture: texture, color: color, size: size)
         
@@ -16,6 +17,18 @@ class RedBird: Bird {
         
         run(flyAction(), withKey: "flyAnimation")
     }
+#endif
+
+    
+#if os(iOS)
+    override init(texture: SKTexture?, color: UIColor, size: CGSize) {
+        super.init(texture: texture, color: color, size: size)
+        
+        animationTextures = configureAnimationTextures()
+        
+        run(flyAction(), withKey: "flyAnimation")
+    }
+#endif
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
