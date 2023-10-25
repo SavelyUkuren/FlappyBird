@@ -23,6 +23,8 @@ class Bird: SKSpriteNode {
     
     public var animationSpeed: CGFloat = 0.2
     
+    private var jumpSoundAction = SKAction.playSoundFileNamed("wing.mp3", waitForCompletion: false)
+    
 #if os(OSX)
     override init(texture: SKTexture?, color: NSColor, size: CGSize) {
         super.init(texture: texture, color: color, size: size)
@@ -63,6 +65,7 @@ class Bird: SKSpriteNode {
         physicsBody?.velocity = .zero
         physicsBody?.applyImpulse(jumpImpulse)
         zRotation = .pi / 4
+        run(jumpSoundAction)
     }
     
     public func flyAction() -> SKAction {

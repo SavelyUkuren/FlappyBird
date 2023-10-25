@@ -27,6 +27,15 @@ class GameScene: SKScene {
     
     private var gameState: GameState = .Menu
     
+    // Sound
+    private var dieSoundAction = SKAction.playSoundFileNamed("die.mp3", waitForCompletion: false)
+    
+    private var hitSoundAction = SKAction.playSoundFileNamed("hit.mp3", waitForCompletion: false)
+    
+    private var pointSoundAction = SKAction.playSoundFileNamed("point.mp3", waitForCompletion: false)
+    
+    private var swooshSoundAction = SKAction.playSoundFileNamed("swoosh.mp3", waitForCompletion: false)
+    
     class func newGameScene() -> GameScene {
         // Load 'GameScene.sks' as an SKScene.
         guard let scene = SKScene(fileNamed: "GameScene") as? GameScene else {
@@ -145,6 +154,10 @@ class GameScene: SKScene {
         pipes.stopMove()
         base.stopMove()
         redBird.stopAnimation()
+        
+        if gameState != .GameOver {
+            run(hitSoundAction)
+        }
     }
     
     private func startGame() {
@@ -180,6 +193,7 @@ class GameScene: SKScene {
             startGame()
             redBird.startFlying()
             gameState = .Playing
+            run(swooshSoundAction)
         }
         
         if gameState == .Playing {
@@ -189,6 +203,7 @@ class GameScene: SKScene {
         if gameState == .GameOver {
             restartGame()
             gameState = .Menu
+            run(swooshSoundAction)
         }
     }
     
@@ -205,11 +220,15 @@ extension GameScene: SKPhysicsContactDelegate {
             break
         case PhysicsCollision.birdCategory & PhysicsCollision.pipeCategory:
             gameOver()
+            if gameState != .GameOver {
+                run(dieSoundAction)
+            }
             gameState = .GameOver
             break
         case PhysicsCollision.birdCategory & PhysicsCollision.triggerCategory:
             score += 1
             updateScoreLabel()
+            run(pointSoundAction)
             break
         default:
             break
