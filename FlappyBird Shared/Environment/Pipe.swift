@@ -48,7 +48,7 @@ class Pipe: SKSpriteNode {
         triggerNode = SKSpriteNode(color: .red, size: CGSize(width: 10, height: distanceBetweenTopLowPipe))
         triggerNode.position.y = 210
         triggerNode.position.x = 10
-        triggerNode.alpha = 0.5
+        triggerNode.alpha = 0
         
         triggerNode.physicsBody = SKPhysicsBody(rectangleOf: triggerNode.size)
         triggerNode.physicsBody?.affectedByGravity = false
