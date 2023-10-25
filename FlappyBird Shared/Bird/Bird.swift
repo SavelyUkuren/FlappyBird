@@ -10,11 +10,13 @@ import SpriteKit
 class Bird: SKSpriteNode {
     
     // Physics
-    public var jumpImpulse = CGVector(dx: 0, dy: 400)
+    public var jumpImpulse = CGVector(dx: 0, dy: 500)
     
     public var mass: CGFloat = 1
     
     public var physicsRadius: CGFloat = 13
+    
+    public var rotateDownSpeed: CGFloat = 6
     
     // Animation
     public var animationTextures: [SKTexture]!
@@ -51,6 +53,7 @@ class Bird: SKSpriteNode {
     public func jump() {
         physicsBody?.velocity = .zero
         physicsBody?.applyImpulse(jumpImpulse)
+        zRotation = .pi / 4
     }
     
     public func flyAction() -> SKAction {
@@ -65,10 +68,23 @@ class Bird: SKSpriteNode {
     public func restart() {
         physicsBody?.affectedByGravity = false
         run(flyAction(), withKey: "flyAnimation")
+        zRotation = 0
     }
     
     public func stopAnimation() {
         removeAction(forKey: "flyAnimation")
+    }
+    
+    public func update(_ currentTime: TimeInterval) {
+        if physicsBody!.velocity.dy < 0 {
+            
+            let currentDegree = (zRotation * 180 / .pi)
+            
+            if currentDegree > -90 {
+                zRotation -= rotateDownSpeed * .pi / 180
+            }
+            
+        }
     }
     
 }

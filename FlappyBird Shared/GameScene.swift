@@ -58,6 +58,7 @@ class GameScene: SKScene {
     override func update(_ currentTime: TimeInterval) {
         base.update(currentTime)
         pipes.update(currentTime)
+        redBird.update(currentTime)
     }
     
     private func configureBackgroundImage() {
