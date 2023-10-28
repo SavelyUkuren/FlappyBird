@@ -51,6 +51,7 @@ class GameScene: SKScene {
         configureStartMessage()
         configureBackgroundImage()
         configureGameOverMessage()
+        configureScoreLabel()
         
         addChild(soundController)
     }
@@ -71,15 +72,14 @@ class GameScene: SKScene {
         
         backgroundImage.setScale(1.6)
         backgroundImage.zPosition = -1
-        backgroundImage.position.y = 100
+        backgroundImage.position = NodeDefaultPosition.BackgroundMessage
         backgroundImage.texture?.filteringMode = .nearest
         
         addChild(backgroundImage)
     }
     
     private func configurePipes() {
-        pipes.position.y = -330
-        pipes.position.x = 1000
+        pipes.position = NodeDefaultPosition.Pipes
         pipes.zPosition = 1
         pipes.setScale(2)
         
@@ -87,13 +87,7 @@ class GameScene: SKScene {
     }
     
     private func configureBase() {
-        #if os(OSX)
-        base.position.y = -350
-        #endif
-        
-        #if os(iOS)
-        base.position.y = -400
-        #endif
+        base.position = NodeDefaultPosition.Base
         
         base.zPosition = 2
         base.setScale(2)
@@ -103,15 +97,8 @@ class GameScene: SKScene {
     }
     
     private func configureBird() {
-        #if os(OSX)
-        redBird.position.x = -300
-        #endif
+        redBird.position = NodeDefaultPosition.Bird
         
-        #if os(iOS)
-        redBird.position.x = -150
-        #endif
-        
-        redBird.position.y = 150
         redBird.zPosition = 3
         redBird.setScale(2)
         
@@ -128,9 +115,10 @@ class GameScene: SKScene {
     
     private func configureScoreLabel() {
         scoreLabel.text = "0"
-        scoreLabel.position.y = 250
+        scoreLabel.position = NodeDefaultPosition.ScoreLabel
         scoreLabel.zPosition = 5
         scoreLabel.fontSize = 120
+        scoreLabel.alpha = 0
         
         addChild(scoreLabel)
     }
@@ -156,9 +144,11 @@ class GameScene: SKScene {
     }
     
     private func startGame() {
-        configureScoreLabel()
-        startMessage.removeFromParent()
         pipes.startMove()
+        base.startMove()
+        
+        startMessage.alpha = 0
+        
         redBird.startFlying()
     }
     
@@ -167,16 +157,13 @@ class GameScene: SKScene {
         updateScoreLabel()
         
         gameOverMessage.alpha = 0
+        startMessage.alpha = 1
         
         pipes.restart()
         base.startMove()
+        
         redBird.restart()
-        
-        redBird.removeFromParent()
-        scoreLabel.removeFromParent()
-        
-        configureBird()
-        configureStartMessage()
+        redBird.position = NodeDefaultPosition.Bird
     }
     
     private func updateScoreLabel() {

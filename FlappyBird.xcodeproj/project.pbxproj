@@ -48,6 +48,8 @@
 		45E1693C2AE9AC7900B7989D /* point.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E1693A2AE9AC7900B7989D /* point.mp3 */; };
 		45E1693E2AED739B00B7989D /* SoundController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E1693D2AED739B00B7989D /* SoundController.swift */; };
 		45E1693F2AED739B00B7989D /* SoundController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E1693D2AED739B00B7989D /* SoundController.swift */; };
+		45E169452AED86CB00B7989D /* NodeDefaultPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E169442AED86CB00B7989D /* NodeDefaultPosition.swift */; };
+		45E169462AED86CB00B7989D /* NodeDefaultPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E169442AED86CB00B7989D /* NodeDefaultPosition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +81,7 @@
 		45E1692F2AE9A3B400B7989D /* swoosh.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = swoosh.mp3; sourceTree = "<group>"; };
 		45E1693A2AE9AC7900B7989D /* point.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = point.mp3; sourceTree = "<group>"; };
 		45E1693D2AED739B00B7989D /* SoundController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundController.swift; sourceTree = "<group>"; };
+		45E169442AED86CB00B7989D /* NodeDefaultPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeDefaultPosition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +183,7 @@
 			children = (
 				455402292ADE670200C10CB4 /* PhysicsCollision.swift */,
 				4554022C2ADEA7D000C10CB4 /* GameState.swift */,
+				45E169442AED86CB00B7989D /* NodeDefaultPosition.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -320,6 +324,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45E169452AED86CB00B7989D /* NodeDefaultPosition.swift in Sources */,
 				455402202ADB1C7C00C10CB4 /* Base.swift in Sources */,
 				455401FF2AD7DA6600C10CB4 /* GameScene.swift in Sources */,
 				455401E62AD7DA6600C10CB4 /* GameViewController.swift in Sources */,
@@ -338,6 +343,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45E169462AED86CB00B7989D /* NodeDefaultPosition.swift in Sources */,
 				455402212ADB1C7C00C10CB4 /* Base.swift in Sources */,
 				455402002AD7DA6600C10CB4 /* GameScene.swift in Sources */,
 				455401F62AD7DA6600C10CB4 /* GameViewController.swift in Sources */,

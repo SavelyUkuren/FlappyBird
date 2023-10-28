@@ -78,6 +78,7 @@ class Bird: SKSpriteNode {
         physicsBody?.affectedByGravity = false
         run(flyAction(), withKey: "flyAnimation")
         zRotation = 0
+        physicsBody?.velocity = .zero
     }
     
     public func stopAnimation() {
