@@ -46,6 +46,8 @@
 		45E169392AE9A3B800B7989D /* hit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E1692B2AE9A3B400B7989D /* hit.mp3 */; };
 		45E1693B2AE9AC7900B7989D /* point.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E1693A2AE9AC7900B7989D /* point.mp3 */; };
 		45E1693C2AE9AC7900B7989D /* point.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E1693A2AE9AC7900B7989D /* point.mp3 */; };
+		45E1693E2AED739B00B7989D /* SoundController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E1693D2AED739B00B7989D /* SoundController.swift */; };
+		45E1693F2AED739B00B7989D /* SoundController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E1693D2AED739B00B7989D /* SoundController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +78,7 @@
 		45E1692D2AE9A3B400B7989D /* wing.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wing.mp3; sourceTree = "<group>"; };
 		45E1692F2AE9A3B400B7989D /* swoosh.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = swoosh.mp3; sourceTree = "<group>"; };
 		45E1693A2AE9AC7900B7989D /* point.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = point.mp3; sourceTree = "<group>"; };
+		45E1693D2AED739B00B7989D /* SoundController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +200,7 @@
 				45E1692B2AE9A3B400B7989D /* hit.mp3 */,
 				45E1692F2AE9A3B400B7989D /* swoosh.mp3 */,
 				45E1692D2AE9A3B400B7989D /* wing.mp3 */,
+				45E1693D2AED739B00B7989D /* SoundController.swift */,
 			);
 			path = Sound;
 			sourceTree = "<group>";
@@ -319,6 +323,7 @@
 				455402202ADB1C7C00C10CB4 /* Base.swift in Sources */,
 				455401FF2AD7DA6600C10CB4 /* GameScene.swift in Sources */,
 				455401E62AD7DA6600C10CB4 /* GameViewController.swift in Sources */,
+				45E1693E2AED739B00B7989D /* SoundController.swift in Sources */,
 				455402262ADD94D700C10CB4 /* Pipe.swift in Sources */,
 				455402102AD7FD6200C10CB4 /* RedBird.swift in Sources */,
 				4554022A2ADE670200C10CB4 /* PhysicsCollision.swift in Sources */,
@@ -336,6 +341,7 @@
 				455402212ADB1C7C00C10CB4 /* Base.swift in Sources */,
 				455402002AD7DA6600C10CB4 /* GameScene.swift in Sources */,
 				455401F62AD7DA6600C10CB4 /* GameViewController.swift in Sources */,
+				45E1693F2AED739B00B7989D /* SoundController.swift in Sources */,
 				455402272ADD94D700C10CB4 /* Pipe.swift in Sources */,
 				455402112AD7FD6200C10CB4 /* RedBird.swift in Sources */,
 				4554022B2ADE670200C10CB4 /* PhysicsCollision.swift in Sources */,
@@ -506,7 +512,7 @@
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -537,7 +543,7 @@
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

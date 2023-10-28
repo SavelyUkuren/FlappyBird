@@ -27,14 +27,7 @@ class GameScene: SKScene {
     
     private var gameState: GameState = .Menu
     
-    // Sound
-    private var dieSoundAction = SKAction.playSoundFileNamed("die.mp3", waitForCompletion: false)
-    
-    private var hitSoundAction = SKAction.playSoundFileNamed("hit.mp3", waitForCompletion: false)
-    
-    private var pointSoundAction = SKAction.playSoundFileNamed("point.mp3", waitForCompletion: false)
-    
-    private var swooshSoundAction = SKAction.playSoundFileNamed("swoosh.mp3", waitForCompletion: false)
+    private var soundController = SoundController()
     
     class func newGameScene() -> GameScene {
         // Load 'GameScene.sks' as an SKScene.
@@ -58,6 +51,8 @@ class GameScene: SKScene {
         configureStartMessage()
         configureBackgroundImage()
         configureGameOverMessage()
+        
+        addChild(soundController)
     }
     
     override func didMove(to view: SKView) {
@@ -156,7 +151,7 @@ class GameScene: SKScene {
         redBird.stopAnimation()
         
         if gameState != .GameOver {
-            run(hitSoundAction)
+            soundController.play(sound: .Hit)
         }
     }
     
@@ -193,17 +188,18 @@ class GameScene: SKScene {
             startGame()
             redBird.startFlying()
             gameState = .Playing
-            run(swooshSoundAction)
+            soundController.play(sound: .Swoosh)
         }
         
         if gameState == .Playing {
             redBird.jump()
+            soundController.play(sound: .Jump)
         }
         
         if gameState == .GameOver {
             restartGame()
             gameState = .Menu
-            run(swooshSoundAction)
+            soundController.play(sound: .Swoosh)
         }
     }
     
@@ -221,14 +217,14 @@ extension GameScene: SKPhysicsContactDelegate {
         case PhysicsCollision.birdCategory & PhysicsCollision.pipeCategory:
             gameOver()
             if gameState != .GameOver {
-                run(dieSoundAction)
+                soundController.play(sound: .Die)
             }
             gameState = .GameOver
             break
         case PhysicsCollision.birdCategory & PhysicsCollision.triggerCategory:
             score += 1
             updateScoreLabel()
-            run(pointSoundAction)
+            soundController.play(sound: .Point)
             break
         default:
             break
