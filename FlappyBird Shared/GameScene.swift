@@ -158,6 +158,7 @@ class GameScene: SKScene {
         
         gameOverMessage.alpha = 0
         startMessage.alpha = 1
+        scoreLabel.alpha = 0
         
         pipes.restart()
         base.startMove()
@@ -179,6 +180,7 @@ class GameScene: SKScene {
         }
         
         if gameState == .Playing {
+            scoreLabel.alpha = 1
             redBird.jump()
             soundController.play(sound: .Jump)
         }
